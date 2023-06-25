@@ -54,5 +54,5 @@ public class Constructor {
 /*
  * On this file, this will demonstrate the method overloading and constructors in oop.
  * Camel casing - it is a declaration on variable name which the casing is up and down.
-        - e.g. brandNameConvention
+        - e.g. brandNameConvention, brand_name_convention
  */
