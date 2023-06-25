@@ -46,6 +46,11 @@ class OtherTwoOperations extends Calc {
         return a / b;
     }
 
+    //method to perform the power of base using its exponent
+    public double power(double a, double b) {
+        return Math.pow(a, b);
+    }
+
 }
 
 
