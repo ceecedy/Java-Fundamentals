@@ -59,6 +59,8 @@
 
             // Instantiating the default constructor of the subclass motor 
             Motor motor = new Motor();
+            
+            Motor motor2 = new Motor("Kawasaki", 360);
 
         }
     }
