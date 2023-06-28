@@ -18,7 +18,8 @@ public class Package {
         Dog.dogMessage();
         Kangaroo.kangarooMessage();
 
-        //Instantiating the Vehicles in the package. 
+        // Instantiating the Vehicles in the package. This also perfoms inheritance
+        // in the nested classes. 
         Vehicles.motor motor = new Vehicles.motor();
         Vehicles.car car = new Vehicles.car();
 
