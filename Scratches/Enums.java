@@ -4,6 +4,7 @@
 
 // TO DECLARE ENUMS 
 enum Day {
+
     Monday,
     Tuesday,
     Wednesday,
@@ -11,6 +12,41 @@ enum Day {
     Friday,
     Saturday, 
     Sunday
+
+}
+
+// ADVANCED DECLARATION OF ENUMS
+enum Cars {
+
+    // the open and close parenthesis is the declaration of default price.
+    WRX_STI(2000),
+    M2(4000),
+    GTR(6000),
+    AVENDATOR(8000),
+    HURACAN(10000),
+    ROADSTER(12000),
+    VIOS();
+
+    private int price; // This declaration of price needs to be done in order to have a default price on every objects of the enum.
+
+    private Cars(int price) {
+
+        this.price = price;
+    }
+
+    private Cars() {
+        this.price = 500;
+    }
+
+    // getters and setters. 
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
 }
 
 public class Enums {
@@ -104,6 +140,25 @@ public class Enums {
             - Due to the usage of enhanced for loops, it generates anonymous inner class to make the loop possible to 
                 allDay variable of type Day[];
         */
+
+        // ******************************************************************************************************** //
+
+        // INSTANTIATING THE ADVANCED ENUM 
+        Cars subaru = Cars.WRX_STI;
+
+        // Trying out the more advanced enhanced foreach 
+        System.out.println("Printing the Enum cars with their prices and position:");
+        for (Cars cars : Cars.values()) {
+            System.out.println(cars + " : " +  cars.getPrice() + " : " + cars.ordinal());
+        }
+
+        System.out.println("Printing out subaru with its price.");
+        if (subaru == Cars.AVENDATOR)
+            System.out.println("This is not a Subaru Car.");
+        else 
+            System.out.println("Sanaol may WRX" + " : " + subaru.getPrice());
+        System.out.println();
+
     }
 }
 
@@ -114,4 +169,18 @@ public class Enums {
         dates of week. So they are called enum Day. 
     - The values of enums are constants. 
     - The index counting of enum starts with '0'.
+    - Enum is a class but this can't be extended to any classes. 
+    - Enum declarations by default extends Enum.class.
+
+    * ADVANCED ENUMS *
+    - When declaring enums, all the values of it is an object. Meaning for every values of enum, it can have specific 
+        literal values that they can possess. This is possible by giving them directly the value. It is possible by 
+        declaring a private variable inside also the same enum. 
+    - But in order for the objects or values in enum to have a actual values it has to have a constructor of the same enum 
+        using the declared variable inside the enum as parameter. 
+    - In order to have interchangable values in the objects of enums, we can use encapsulation or getters and setters 
+        implementation inside the enum and use the declared variable as parameter. 
+    - We can use multiple constructors inside the enums to support the other objects or values in the enums to have 
+        no values. 
+    - Once you set a value to one object in the enum, all values should have declared values also. 
  */
