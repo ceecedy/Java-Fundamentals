@@ -65,4 +65,6 @@ public class LambdaExp {
     * Lambda Expression *
     - Lambda expression often used in anonymous classes to make a shortcut definition of the code. 
     - Lambda was used in this symbol (->). For example and its syntax, refer to the code above.   
+    - When performing lambda expressions, return keyword will not work on single line lamdba expression.
+
  */
