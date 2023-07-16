@@ -29,6 +29,7 @@ enum Cars {
 
     private int price; // This declaration of price needs to be done in order to have a default price on every objects of the enum.
 
+    // multiple constructors made for objects in the enum.
     private Cars(int price) {
 
         this.price = price;
