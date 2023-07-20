@@ -44,7 +44,6 @@ public class RaceThread {
             // Join method from Class Thread will work until its process dies or finished. 
             t1.join();
             t2.join();
-            // So it happens here that thread t1 counts up until to 100 first and followed by the t2.
         } 
         catch (InterruptedException e) {
             e.printStackTrace();
