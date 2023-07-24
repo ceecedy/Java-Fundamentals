@@ -27,9 +27,8 @@ public class DSA_Stacks {
 
         // Getting the index of stacks while printing the corresponding value of it. 
         System.out.println("Stack Values with their Indexes (1st pushing) : ");
-        for (int i = 0; i < implementStack.size(); i++) {
+        for (int i = 0; i < implementStack.size(); i++) 
             System.out.println("Index " + i + " : " + implementStack.get(i));
-        }
         System.out.println();
 
         // Getting the current capacity of the ArrayList that is used on the stack.
@@ -78,8 +77,6 @@ public class DSA_Stacks {
         
         // -------------------------------------------------------------------------------------------- // 
 
-        System.out.println("----------- ACTIVITY 1 -----------");
-        System.out.println();
 
     }
     
