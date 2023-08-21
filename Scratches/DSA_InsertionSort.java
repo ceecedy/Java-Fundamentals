@@ -29,8 +29,12 @@ public class DSA_InsertionSort {
     private static void insertionSort(int[] array) {
 
         for (int i = 0; i < array.length; i++) {
+            // The second iteration will advance to one index because the array index via second iteration
+            // will be used to compare to the left to leftmost part of the array. 
             for (int j = i + 1; j < array.length; j++) {
+                // if the second iteration element is less than the first iteration element.
                 if (array[j] < array[i]) {
+                    // Swapping the elements till it reaches the leftmost part. 
                     int temp = array[j];
                     array[j] = array[i];
                     array[i] = temp;
