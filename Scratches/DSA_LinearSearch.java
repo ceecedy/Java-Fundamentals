@@ -18,7 +18,8 @@ public class DSA_LinearSearch {
 
         // * if result is equal to negative 1, then from the method linearsearch,
         // * the argument i passed was not found. 
-        if (result == -1) System.out.println("Element " + 10 + "was not found in the array.");
+        if (result == -1) 
+            System.out.println("Element " + 10 + "was not found in the array.");
 
         // else, the element was found.
         else {
