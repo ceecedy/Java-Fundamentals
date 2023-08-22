@@ -49,6 +49,7 @@ public class DSA_SelectionSort {
             int temp = array[i]; // giving the min value (array[i]) to the temp.
             array[i] = array[min]; // giving the new current min value to current first iteration.
             array[min] = temp; // giving the min value to the last current min index value. 
+            
         }
         
     }    
