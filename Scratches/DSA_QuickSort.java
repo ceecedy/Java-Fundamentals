@@ -113,8 +113,9 @@ public class DSA_QuickSort {
         array[i] = array[end];
         array[end] = temp;
         
-        
-        
+        // the following tracker is the result of this partition method. 
+        // The following tracker holds the pivot value and this following tracker index will decide the left and right 
+        // partition.
         return i;
 
     }
