@@ -59,6 +59,9 @@ public class DSA_Graphs {
 
         // printing the adjacency matrix to repreent tht graph. 
         graph.print();
+
+        // to check if there's an edge between two nodes
+        System.out.println("\nIs node A -> B? : " + graph.checkEdge(0, 1));
         
 
     }
