@@ -43,14 +43,19 @@ public class GraphAdjacencyMatrix {
     // method to represent the graph with this adjacency matrix 
     public void print() {
 
-        // using enhanced for loop to print the row header and column header of the adjacency matrix 
-        System.out.print("  ");
+        // using enhanced for loop to print the column header of the adjacency matrix 
+        System.out.print("  "); // to have spacing in the header above ior header in the column.
         for (AdjacencyMatrixInputNode nodeData : nodes) {
+            // passing every values of array list nodes to the class nodeData since the values inside the array list nodes
+            // are objects from class nodedata. So it is possible.
             System.out.print(nodeData.nodeData + " ");
+            // printing the nodeData or the values and made as headers of the adjacency matrix
         }
-        System.out.println();
+        System.out.println(); // spacing from header title to the values of adjacency matrix. 
 
+        // To print the values of the adjacency matrix. 
         for (int i = 0; i < adjacencyMatrix.length; i++) {
+            // to print the row header of the adjacency matrix
             System.out.print(nodes.get(i).nodeData + " ");
             for (int j = 0; j < adjacencyMatrix[i].length; j++) {
                 System.out.print(adjacencyMatrix[i][j] + " ");
