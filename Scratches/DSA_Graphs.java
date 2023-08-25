@@ -3,7 +3,9 @@
  */
 
 import packages.GraphAdjacencyMatrix;
+import packages.AdjacencyListInputNode;
 import packages.AdjacencyMatrixInputNode;
+import packages.GraphAdjacencyList;
 
 public class DSA_Graphs {
 
@@ -58,11 +60,41 @@ public class DSA_Graphs {
         graph.addEdge(4, 2); // Node E has one way connection to node C
 
         // printing the adjacency matrix to repreent tht graph. 
+        System.out.println("\nGraph: Adjacency Matrix\n");
         graph.print();
 
         // to check if there's an edge between two nodes
-        System.out.println("\nIs node A -> B? : " + graph.checkEdge(0, 1));
+        System.out.println("\nIs node A -> B? : " + graph.checkEdge(0, 1) + "\n");
         
+        // ************************************************************************************************ // 
+
+        // Implementation of Adjacency List. 
+        GraphAdjacencyList graph2 = new GraphAdjacencyList();
+
+        // to add a node in the adjacency list. 
+        // making an anonymous insertion of data to the adjacency matrix.  
+        graph2.addNode(new AdjacencyListInputNode('A'));
+        graph2.addNode(new AdjacencyListInputNode('B'));
+        graph2.addNode(new AdjacencyListInputNode('C'));
+        graph2.addNode(new AdjacencyListInputNode('D'));
+        graph2.addNode(new AdjacencyListInputNode('E'));
+
+        // adding edges to the nodes or vertex.
+        // src will be the start or the head node of the linked list and dest will be the edge of the two nodes in the linked list.
+        graph2.addEdge(0, 1); // Node A has one way connection to node B 
+        graph2.addEdge(1, 2); // Node B has one way connection to node C
+        graph2.addEdge(1, 4); // Node B has one way connection to node E
+        graph2.addEdge(2, 3); // Node C has one way connection to node D
+        graph2.addEdge(2, 4); // Node C has one way connection to node E
+        graph2.addEdge(4, 0); // Node E has one way connection to node A
+        graph2.addEdge(4, 2); // Node E has one way connection to node C
+
+        // printing the adjacency list to repreent tht graph. 
+        System.out.println("Graph: Adjacency List\n");
+        graph2.print();
+
+        // to check if there's an edge between two nodes
+        System.out.println("\nIs node C -> D? : " + graph2.checkEdge(2, 3) + "\n");
 
     }
 
