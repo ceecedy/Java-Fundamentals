@@ -2,9 +2,10 @@ package packages;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.Stack;
 
 public class GraphAdjacencyList {
-    
+
     // Making the array list of linked list since the connections of nodes in the adjacency list is via the linked lists 
     // that are stored in the array list. 
     ArrayList<LinkedList<AdjacencyListInputNode>> aList;
@@ -85,4 +86,32 @@ public class GraphAdjacencyList {
         
     }
 
+    // method for Depth-First Search traversal
+    public void dfs(int startNode) {
+
+        boolean[] visited = new boolean[aList.size()];
+        Stack<Integer> stack = new Stack<>();
+        stack.push(startNode);
+
+        while (!stack.isEmpty()) {
+            int currentNode = stack.pop();
+            if (!visited[currentNode]) {
+                visited[currentNode] = true;
+
+                // Print the character data of the current node
+                System.out.print(aList.get(currentNode).get(0).data + " ");
+
+                LinkedList<AdjacencyListInputNode> currentList = aList.get(currentNode);
+                for (AdjacencyListInputNode node : currentList) {
+                    // Convert character data back to index by subtracting 'A'
+                    int neighbor = node.data - 'A';
+                    if (!visited[neighbor]) {
+                        stack.push(neighbor);
+                    }
+                }
+            }
+        }
+        
+    }
+    
 }
