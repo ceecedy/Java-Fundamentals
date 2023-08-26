@@ -65,6 +65,10 @@ public class DSA_Graphs {
 
         // to check if there's an edge between two nodes
         System.out.println("\nIs node A -> B? : " + graph.checkEdge(0, 1) + "\n");
+
+        // demonstrating depth first search.
+        graph.depthFirstSearchAMatrix(0);
+        System.out.println(); // spacing
         
         // ************************************************************************************************ // 
 
@@ -95,6 +99,10 @@ public class DSA_Graphs {
 
         // to check if there's an edge between two nodes
         System.out.println("\nIs node C -> D? : " + graph2.checkEdge(2, 3) + "\n");
+
+         // demonstrating depth first search.
+        graph2.dfs(0);
+        System.out.println(); // spacing
 
     }
 
