@@ -64,5 +64,58 @@ public class GraphAdjacencyMatrix {
         }
 
     }
+
+    // essential not to make static method.
+    public void depthFirstSearchAMatrix(int src) {
+
+         // DEPTH FIRST SEARCH (DFS)
+
+        /*
+            * search algorithm to traverse a tree or graph data structure. 
+            
+            * Steps on this search algorithm: 
+                * Pick a route 
+                * Keep going until you reach the dead end, or previously visited node.
+                * Backtrack to the last node that has unvisited adjacent neighbors.
+            
+            * Take note that Depth first search is using stack for every nodes visited. 
+        */
+
+        // to keep the track of the visited nodes. 
+        boolean[] visited = new boolean[adjacencyMatrix.length];
+        dfsHelperAMatrix(src, visited);
+
+    }
+
+    // helper for the depth first search. 
+    private void dfsHelperAMatrix(int src, boolean[] visited) {
+
+        // base case.
+        // if this returns true, then the current index of this visited array of booleans is already visited
+        // need to backtrack. 
+        if (visited[src]) {
+            return;
+        }
+        else {
+            // if not yet visited, set the current source index to true to set as the current node is visited. 
+            visited[src] = true; 
+            // print the visited node, display the current node using the src index and pass it to the node array list that
+            // contains class Adjacency Matrix Input mode.
+            System.out.println(nodes.get(src).nodeData + " : visited  ");
+        } 
+    
+        for (int i = 0; i < adjacencyMatrix[src].length; i++) {
+            if (adjacencyMatrix[src][i] == 1) {
+                dfsHelperAMatrix(i, visited);
+                // special mention: 
+                // if it happens that recursion happens and that recursion stack finishes the loop without 
+                // findings of adjacency, it will return to this call and it WILL CONTINUE THE LOOP.
+                // Happens when the source is Node A or 0
+            }
+        }
+
+        return;
+
+    }
     
 }
