@@ -99,7 +99,7 @@ public class GraphAdjacencyList {
                 visited[currentNode] = true;
 
                 // Print the character data of the current node
-                System.out.print(aList.get(currentNode).get(0).data + " ");
+                System.out.print(aList.get(currentNode).get(0).data + " -> ");
 
                 LinkedList<AdjacencyListInputNode> currentList = aList.get(currentNode);
                 for (AdjacencyListInputNode node : currentList) {
@@ -111,7 +111,7 @@ public class GraphAdjacencyList {
                 }
             }
         }
-        
+
     }
     
 }
