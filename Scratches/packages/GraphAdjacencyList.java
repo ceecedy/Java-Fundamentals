@@ -87,24 +87,39 @@ public class GraphAdjacencyList {
     }
 
     // method for Depth-First Search traversal
-    public void dfs(int startNode) {
+    public void depthFirstSearchAList(int startNode) {
 
+        // declaring array of booleans to store the visited nodes in the graph. 
         boolean[] visited = new boolean[aList.size()];
+        // declaring stack to store also the visited nodes in the graph. 
+        // Its difference to declared array of booleans is that, stack will operate the backtracking and depth searching
+        // while as the array of booleans will just keep track of the visited nodes. 
         Stack<Integer> stack = new Stack<>();
+        // push immediately to the stack the first visited node. 
         stack.push(startNode);
 
+        // when the depthFirstSearchAList method is called, surely there would be a data in a stack. Therefore, in this loop
+        // it will continue to traverse since the condition was while stack is not empty. 
         while (!stack.isEmpty()) {
+            // declaring current node to have a pop function to stack if the currentNode is already visited. 
             int currentNode = stack.pop();
+            // if currentNode is not yet visited, then set the current node to true to marked as visited. 
             if (!visited[currentNode]) {
                 visited[currentNode] = true;
 
                 // Print the character data of the current node
+                // pattern of getting the character data to array list of linked list:
+                // call the arraylist first to get the index of current node, by this it will get the linked list.
+                // then get the index of the current node or get(0). Finally get the data of the linked list.
                 System.out.print(aList.get(currentNode).get(0).data + " -> ");
-
+                // declare a linked list that accepts the class Adjacency List Input Node to get the element of index 
+                // of array list that accepts linked list. 
                 LinkedList<AdjacencyListInputNode> currentList = aList.get(currentNode);
+                // declaring a enhanced for loop to get the values of the linked list which is class of Adjacency list input node.
                 for (AdjacencyListInputNode node : currentList) {
                     // Convert character data back to index by subtracting 'A'
                     int neighbor = node.data - 'A';
+                    // if the node neighbor of the current node is not yet visited, push it to the stack.
                     if (!visited[neighbor]) {
                         stack.push(neighbor);
                     }
