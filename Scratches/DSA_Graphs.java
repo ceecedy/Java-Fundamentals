@@ -101,7 +101,7 @@ public class DSA_Graphs {
         System.out.println("\nIs node C -> D? : " + graph2.checkEdge(2, 3) + "\n");
 
          // demonstrating depth first search.
-        graph2.dfs(0);
+        graph2.depthFirstSearchAList(0);
         System.out.println(); // spacing
 
     }
