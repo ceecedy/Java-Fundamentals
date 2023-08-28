@@ -73,7 +73,7 @@ public class DSA_Graphs {
 
         // demonstrating breadth first search.
         System.out.println("Breadth First Search :");
-        graph.breadthFirstSearch(0);
+        graph.breadthFirstSearchAMatrix(0);
         System.out.println(); // spacing
         
         // ************************************************************************************************ // 
@@ -107,7 +107,13 @@ public class DSA_Graphs {
         System.out.println("\nIs node C -> D? : " + graph2.checkEdge(2, 3) + "\n");
 
          // demonstrating depth first search.
+         System.out.println("Depth First Search :");
         graph2.depthFirstSearchAList(0);
+        System.out.println("\n"); // spacing
+
+        // demonstrating breadth first search.
+        System.out.println("Breadth First Search :");
+        graph2.breadthFirstSearchAList(0);
         System.out.println(); // spacing
 
     }
