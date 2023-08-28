@@ -120,7 +120,7 @@ public class GraphAdjacencyMatrix {
 
     }
 
-    public void breadthFirstSearch(int src) {
+    public void breadthFirstSearchAMatrix(int src) {
 
         // this is a search algorithm used in trees and graphs. 
         // Searching done by level at a time not by branch. Depth first search is done by branch. 
