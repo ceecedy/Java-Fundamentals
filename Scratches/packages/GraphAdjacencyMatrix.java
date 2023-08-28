@@ -1,6 +1,8 @@
 package packages;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Queue;
 
 public class GraphAdjacencyMatrix {
 
@@ -115,6 +117,44 @@ public class GraphAdjacencyMatrix {
         }
 
         return;
+
+    }
+
+    public void breadthFirstSearch(int src) {
+
+        // this is a search algorithm used in trees and graphs. 
+        // Searching done by level at a time not by branch. Depth first search is done by branch. 
+
+        // Declaring a queue that is implemented on linked list since queue is an interface only. 
+        // This was done by the polymorphism. 
+        // Queue was used and this is essential to this operation. 
+        Queue<Integer> queueTraversal = new LinkedList<>();
+        // Now declaring a boolean of arrays to track the visited nodes. 
+        boolean[] nodesVisited = new boolean[adjacencyMatrix.length];
+
+        // inserting the very first node visited which is the source in both queue and array of boolean. 
+        queueTraversal.offer(src);
+        nodesVisited[src] = true;
+
+        while (queueTraversal.size() != 0) {
+
+            // declaring current node. Src is now current node at this point.
+            src = queueTraversal.poll();
+            // printing the visited nodes. 
+            System.out.println(nodes.get(src).nodeData + " = visited");
+
+            // looping the Src row in the 2d array to find if the source has adjacency to other nodes. 
+            for (int i = 0; i < adjacencyMatrix[src].length; i++) {
+                // if the src meets the other nodes and it is marked as 1 in 2d array
+                // and if that other nodes index gets passed to nodesVisited is false
+                // then push that other node to queue and mark its index to the nodes visited as true.
+                if (adjacencyMatrix[src][i] == 1 && !nodesVisited[i]) {
+                    queueTraversal.offer(i);
+                    nodesVisited[i] = true;
+                }
+            }
+
+        }
 
     }
     
