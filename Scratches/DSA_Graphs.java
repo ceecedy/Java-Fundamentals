@@ -60,14 +60,20 @@ public class DSA_Graphs {
         graph.addEdge(4, 2); // Node E has one way connection to node C
 
         // printing the adjacency matrix to repreent tht graph. 
-        System.out.println("\nGraph: Adjacency Matrix\n");
+        System.out.println("\nGraph: Adjacency Matrix");
         graph.print();
 
         // to check if there's an edge between two nodes
         System.out.println("\nIs node A -> B? : " + graph.checkEdge(0, 1) + "\n");
 
         // demonstrating depth first search.
+        System.out.println("Depth First Search :");
         graph.depthFirstSearchAMatrix(0);
+        System.out.println(); // spacing
+
+        // demonstrating breadth first search.
+        System.out.println("Breadth First Search :");
+        graph.breadthFirstSearch(0);
         System.out.println(); // spacing
         
         // ************************************************************************************************ // 
@@ -94,7 +100,7 @@ public class DSA_Graphs {
         graph2.addEdge(4, 2); // Node E has one way connection to node C
 
         // printing the adjacency list to repreent tht graph. 
-        System.out.println("Graph: Adjacency List\n");
+        System.out.println("Graph: Adjacency List");
         graph2.print();
 
         // to check if there's an edge between two nodes
