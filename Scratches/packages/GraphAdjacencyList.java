@@ -1,7 +1,9 @@
 package packages;
 
+import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Stack;
 
 public class GraphAdjacencyList {
@@ -126,6 +128,45 @@ public class GraphAdjacencyList {
             }
         }
 
+    }
+
+    public void breadthFirstSearchAList(int startNode) {
+
+        // Array of booleans to keep track of visited nodes
+        boolean[] visited = new boolean[aList.size()];
+
+        // Queue to perform BFS traversal
+        Queue<Integer> queue = new ArrayDeque<>();
+        // array deque was used instead of linked list just for better performance.
+
+        // enqueue the start node for traversal
+        queue.offer(startNode);
+
+        // if queue is not empty.
+        while (!queue.isEmpty()) {
+            // Dequeue the current node from the queue
+            int currentNode = queue.poll();
+
+            if (!visited[currentNode]) {
+                // Mark the current node as visited
+                visited[currentNode] = true;
+
+                // Print the character data of the current node
+                System.out.print(aList.get(currentNode).get(0).data + " -> ");
+
+                // Get the linked list of neighbors for the current node
+                LinkedList<AdjacencyListInputNode> currentList = aList.get(currentNode);
+
+                // Traverse neighbors in order and enqueue unvisited neighbors
+                for (int i = 0; i < currentList.size(); i++) {
+                    // Convert character data back to index by subtracting 'A'
+                    int neighbor = currentList.get(i).data - 'A';
+                    if (!visited[neighbor]) {
+                        queue.offer(neighbor);
+                    }
+                }
+            }
+        }
     }
     
 }
